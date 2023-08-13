@@ -2,7 +2,12 @@ CURRENT_YEAR = 2023
 CAL_AGE = 100
 
 def user_input():
-    name = input("Please enter your name: ")
+    while True:
+        name = input("Please enter your name: ")
+        if name.isalpha():
+            break
+        else:
+            print("Please enter a valid name.")
     while True:
         age = input("Please enter your age: ")
         if age.isdigit():
@@ -11,6 +16,8 @@ def user_input():
                 print("Please enter a valid age.")
             else:
                 break
+        else:
+            print("Please enter a valid age.")
 
     return name, age
 
